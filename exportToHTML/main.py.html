@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Emma McNeill</span>
+<span class="s0"># Purpose: the purpose of this program is to play a numbers guessing game</span>
+
+<span class="s0"># have the program generate a random number between 1 and 100</span>
+<span class="s2">import </span><span class="s1">random</span>
+
+<span class="s1">number = random.randint(</span><span class="s3">1</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+
+
+<span class="s2">while True</span><span class="s1">:</span>
+
+    <span class="s2">try</span><span class="s1">:</span>
+
+        <span class="s1">print(</span><span class="s4">&quot;Welcome to the Number Guessing Game!&quot;</span><span class="s1">)</span>
+        <span class="s1">print()</span>
+        <span class="s0"># give the user a way to quit the game</span>
+        <span class="s1">print(</span><span class="s4">&quot;If you would like to exit the game at anytime, press enter.&quot;</span><span class="s1">)</span>
+        <span class="s1">print()</span>
+        <span class="s0"># have user enter a guess</span>
+        <span class="s1">guess = int(input(</span><span class="s4">&quot;Guess an integer between 1 and 100:  &quot;</span><span class="s1">))</span>
+        <span class="s1">print()</span>
+
+        <span class="s0"># keep track of how many guesses</span>
+        <span class="s1">count = </span><span class="s3">1</span>
+
+        <span class="s2">while </span><span class="s1">number != guess:</span>
+            <span class="s1">count = count + </span><span class="s3">1</span>
+
+            <span class="s2">if </span><span class="s1">guess &gt; number:</span>
+                <span class="s1">print(</span><span class="s4">f&quot;Your guess is too high. Please try again.&quot;</span><span class="s1">)</span>
+                <span class="s1">print()</span>
+                <span class="s1">guess = int(input(</span><span class="s4">&quot;Enter an integer between 1 and 100:  &quot;</span><span class="s1">))</span>
+                <span class="s1">print()</span>
+
+            <span class="s2">if </span><span class="s1">guess &lt; number:</span>
+                <span class="s1">print(</span><span class="s4">f&quot;Your guess is too low. Please try again.&quot;</span><span class="s1">)</span>
+                <span class="s1">print()</span>
+                <span class="s1">guess = int(input(</span><span class="s4">&quot;Enter an integer between 1 and 100:  &quot;</span><span class="s1">))</span>
+                <span class="s1">print()</span>
+
+        <span class="s2">if </span><span class="s1">guess == number:</span>
+            <span class="s1">print(</span><span class="s4">f'Good job! You won in </span><span class="s2">{</span><span class="s1">count</span><span class="s2">} </span><span class="s4">guesses!'</span><span class="s1">)</span>
+
+
+    <span class="s2">except </span><span class="s1">ValueError </span><span class="s2">as </span><span class="s1">e:</span>
+     <span class="s1">print(</span><span class="s4">f&quot;Ending game...&quot;</span><span class="s1">)</span>
+     <span class="s1">print(</span><span class="s4">f&quot;</span><span class="s2">\t{</span><span class="s1">e</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s1">)</span>
+
+    <span class="s2">finally</span><span class="s1">:</span>
+      <span class="s1">print(</span><span class="s4">f&quot; Thanks for playing! &quot;</span><span class="s1">.center(</span><span class="s3">20</span><span class="s2">, </span><span class="s4">&quot;=&quot;</span><span class="s1">))</span>
+      <span class="s1">print()</span></pre>
+</body>
+</html>
